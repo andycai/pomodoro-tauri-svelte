@@ -33,10 +33,10 @@ export const action = {
         workType.set(WorkType.Break)
         count.set(getIntDefault(Keys.defaultBreakDuration, DefaultBreakDuration))
         // 当天数量本地保存
-        console.log("daykey", get(daykey))
-        console.log("today key", Keys.today())
+        // console.log("daykey", get(daykey))
+        // console.log("today key", Keys.today())
         if (get(daykey) === Keys.today()) { // 当天
-          saveItem(get(daykey), get(today).toString())
+          saveItem(Keys.today(), get(today).toString())
         } else {
           daykey.set(Keys.today())
           today.set(1) // 隔天更新
