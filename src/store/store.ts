@@ -1,7 +1,6 @@
 import { get, writable } from "svelte/store";
 import { DefaultBreakDuration, DefaultWorkDuration, Keys, MagicNumber, Status, Tasks, WorkType } from "../config";
 import { getIntDefault, saveItem } from "./local";
-import { ClassContainer, TextColors } from "../style";
 
 export const timer = {
   id: null
