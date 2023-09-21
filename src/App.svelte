@@ -1,10 +1,4 @@
 <script lang="ts">
-  import OperactionCom from './components/OperactionCom.svelte'
-  import RefreshCom from './components/RefreshCom.svelte'
-  import TimeCounterCom from './components/TimeCounterCom.svelte'
-  import TodayCountCom from './components/TodayCountCom.svelte'
-  import Close from "svelte-material-icons/Close.svelte";
-  import { appWindow } from '@tauri-apps/api/window'
   import { action, today, workType } from './store/store';
   import { onDestroy, onMount } from 'svelte';
   import { DefaultWorkDuration, Keys, MagicNumber, Tasks, dataJsonURL, diAudioPaths, endAudioPaths } from './config';
@@ -14,6 +8,9 @@
   import { convertFileSrc } from "@tauri-apps/api/tauri";
   import { addAudio, addEndAudio } from './utils';
   import { ClassContainer, TextColors } from './style';
+  import Footbar from './components/footbar.svelte';
+  import TimeCounter from './components/time-counter.svelte';
+  import Appbar from './components/appbar.svelte';
 
   onMount(async () => {
     action.initData(
@@ -27,7 +24,7 @@
     initItem(Keys.defaultWorkDuration, data.defaultWorkDuration.toString())
     initItem(Keys.defaultBreakDuration, data.defaultBreakDuration.toString())
 
-    for (let v of diAudioPaths) {
+    for (const v of diAudioPaths) {
       // console.log("path: ", v)
       const audioPath = await resolveResource(v)
       const audio = new Audio(convertFileSrc(audioPath))
@@ -35,7 +32,7 @@
       addAudio(v, audio)
     }
 
-    for (let v of endAudioPaths) {
+    for (const v of endAudioPaths) {
       const audioPath = await resolveResource(v)
       addEndAudio(v, new Audio(convertFileSrc(audioPath)))
     }
@@ -64,17 +61,7 @@
 </script>
 
 <div class="{mainStyle}">
-  <div class="cursor-pointer absolute right-0" on:click={() => appWindow.close() }>
-    <Close size={14} />
-  </div>
-  <div class="flex flex-col">
-    <TimeCounterCom />
-    <div class="flex flex-row justify-center mt-1">
-      <TodayCountCom />
-      <div class="flex flex-row flex-1 grow justify-end space-x-1 mr-1">
-        <RefreshCom />
-        <OperactionCom />
-      </div>
-    </div>
-  </div>
+  <Appbar />
+  <TimeCounter />
+  <Footbar />
 </div>

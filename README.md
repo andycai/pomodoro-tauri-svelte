@@ -9,9 +9,9 @@ A simple pomodoro timer write in Tauri and Svelte.
 
 ## Screenshots
 
-<img src="./screenshots/screenshot.png" width="140" height="184" alt="Screenshot of Pomodoro">
+<img src="./screenshots/screenshot.png" width="128" height="196" alt="Screenshot of Pomodoro">
 
-<img src="./screenshots/screenshot_break.png" width="140" height="184" alt="Screenshot of Pomodoro">
+<img src="./screenshots/screenshot_break.png" width="128" height="196" alt="Screenshot of Pomodoro">
 
 # Tauri + Svelte + Typescript
 
@@ -25,7 +25,7 @@ This template should help get you started developing with Tauri, Svelte and Type
 ## Install Tauri support
 
 ```bash
-pnpm install
+pnpm i
 ```
 
 ## Run project

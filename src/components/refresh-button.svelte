@@ -8,6 +8,6 @@
 
 <div on:click={action.reset}>
 {#if $status === Status.Pause || $workType === WorkType.Break}
-  <RefreshCircle class="cursor-pointer" size={IconSize} />
+  <RefreshCircle class="cursor-pointer" size={14} />
 {/if}
 </div>

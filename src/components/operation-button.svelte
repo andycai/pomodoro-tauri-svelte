@@ -4,7 +4,7 @@
   import { Status, IconSize, INTERVAL } from "../config";
   import { action, status, timer } from "../store/store";
   import { onDestroy } from "svelte";
-    import { playAudio, playEndAudio } from "../utils";
+  import { playAudio, playEndAudio } from "../utils";
 
   console.log("render Operaction")
 
