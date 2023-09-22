@@ -6,7 +6,7 @@
   //
 </script>
 
-<div class="flex flex-row justify-between pt-1 px-1 text-lg">
+<div class="flex flex-row justify-between pt-1 px-1 text-sm">
   <PomodoroCount />
   <button class="flex flex-row justify-end space-x-1" on:click={() => appWindow.close() }>
     <Close />

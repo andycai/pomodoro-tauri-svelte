@@ -1,23 +1,28 @@
 <script lang="ts">
-  import ClockOutline from "svelte-material-icons/ClockOutline.svelte";
-  import CoffeeOutline from "svelte-material-icons/CoffeeOutline.svelte";
-  import { WorkType } from '../config';
-  import { today, total, workType } from "../store/store";
+  import Music from "svelte-material-icons/Music.svelte";
+  import MusicOff from "svelte-material-icons/MusicOff.svelte";
+  import { today, total, status } from "../store/store";
   import { changeAudio, playAudio } from "../utils";
+    import { Status } from "../config";
 
   console.log("render today count")
 
+  let musicOff = false 
+
   function change() {
-    playAudio(changeAudio())
+    if ($status === Status.Tick) {
+      musicOff = !changeAudio()
+      playAudio(!musicOff)
+    }
   }
 
 </script>
 
 <button on:click={change}>
-{#if $workType === WorkType.Work}
-  <ClockOutline />
+{#if musicOff }
+  <MusicOff />
 {:else}
-  <CoffeeOutline />
+  <Music />
 {/if}
 </button>
-<span class="text-xs ml-1 pt-0">{ $total }/{ $today }</span>
+<span class="text-xs pt-0">{ $total }/{ $today }</span>

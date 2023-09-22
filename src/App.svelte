@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { action, today, workType } from './store/store';
-  import { onDestroy, onMount } from 'svelte';
+  import { action, workType, theme } from './store/store';
+  import { onMount } from 'svelte';
   import { DefaultWorkDuration, Keys, MagicNumber, Tasks, dataJsonURL, diAudioPaths, endAudioPaths } from './config';
   import { getIntDefault, initItem } from './store/local';
   import { resolveResource } from "@tauri-apps/api/path";
@@ -40,9 +40,8 @@
 
   let mainStyle = ""
   $: {
-    const index = Math.floor($today / MagicNumber)
     const arr = TextColors[$workType]??TextColors[1]
-    const color = arr[index]??arr[MagicNumber]
+    const color = arr[$theme]??arr[0]
     mainStyle = ClassContainer + color 
   }
 </script>

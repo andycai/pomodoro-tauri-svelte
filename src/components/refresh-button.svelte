@@ -6,7 +6,7 @@
   console.log("render refresh")
 </script>
 
-<button on:click={action.reset}>
+<button class="flex flex-row justify-end text-sm basis-1/4" on:click={action.reset}>
 {#if $status === Status.Pause || $workType === WorkType.Break}
   <RefreshCircle />
 {/if}

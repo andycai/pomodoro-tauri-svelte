@@ -1,6 +1,7 @@
 import { get, writable } from "svelte/store";
 import { DefaultBreakDuration, DefaultWorkDuration, Keys, MagicNumber, Status, Tasks, WorkType } from "../config";
 import { getIntDefault, saveItem } from "./local";
+import { themeNum } from "../style";
 
 export const timer = {
   id: null
@@ -11,6 +12,7 @@ export const workType = writable(WorkType.Work)
 export const daykey = writable(Keys.today())
 export const today = writable(0)
 export const total = writable(0)
+export const theme = writable(0)
 
 export const action = {
   initData: (td: number, tt: number, c: number) => {
@@ -30,6 +32,9 @@ export const action = {
       if (get(workType) === WorkType.Work) {
         today.update(t => t + 1)
         total.update(t => t + 1)
+        if (get(today) % MagicNumber === 0) {
+          action.changeTheme()
+        }
         workType.set(WorkType.Break)
         count.set(getIntDefault(Keys.defaultBreakDuration, DefaultBreakDuration))
         // 当天数量本地保存
@@ -62,5 +67,8 @@ export const action = {
     count.set(getIntDefault(Keys.defaultWorkDuration, DefaultWorkDuration))
     status.set(Status.Idle)
     workType.set(WorkType.Work)
+  },
+  changeTheme: () => {
+    theme.update(t => (t + 1) % themeNum)
   }
 }
