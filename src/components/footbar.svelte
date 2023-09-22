@@ -10,7 +10,7 @@
 </script>
 
 <div class="flex flex-row items-end mt-1 px-1 text-2xl">
-  <button class="flex flex-row justify-start text-sm basis-1/4" on:click={changeTheme}>
+  <button class="flex flex-row justify-start text-sm basis-1/4" title="Change Theme" on:click={changeTheme}>
     <SelectColor />
   </button>
   <OperationButton />

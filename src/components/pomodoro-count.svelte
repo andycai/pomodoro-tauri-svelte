@@ -18,7 +18,7 @@
 
 </script>
 
-<button on:click={change}>
+<button title="Change Audio or Mute" on:click={change}>
 {#if musicOff }
   <MusicOff />
 {:else}
