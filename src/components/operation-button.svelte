@@ -1,13 +1,12 @@
 <script lang="ts">
   import PauseCircleOutline from "svelte-material-icons/PauseCircleOutline.svelte";
   import PlayCircleOutline from "svelte-material-icons/PlayCircleOutline.svelte";
-  import { Status, IconSize, INTERVAL } from "../config";
+  import { Status, INTERVAL } from "../config";
   import { action, status, timer } from "../store/store";
   import { onDestroy } from "svelte";
   import { playAudio, playEndAudio } from "../utils";
 
-  console.log("render Operaction")
-
+//   console.log("render Operaction")
 	const unsubscribe = status.subscribe((newValue) => {
 		timer.id !== null && clearInterval(timer.id)
 		if (newValue === Status.Tick) {
@@ -25,10 +24,10 @@
 
 </script>
 
-<div on:click={action.tick}>
+<button on:click={action.tick}>
 {#if $status === Status.Tick}
-	<PauseCircleOutline class="cursor-pointer" />
+	<PauseCircleOutline />
 {:else}
-	<PlayCircleOutline class="cursor-pointer" />
+	<PlayCircleOutline />
 {/if}
-</div>
+</button>

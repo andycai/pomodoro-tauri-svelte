@@ -2,7 +2,7 @@
   import { count } from "../store/store";
   import { convertMinuteString, convertSecondString } from "../utils";
 
-  console.log("render TimeCounter", $count);
+  // console.log("render TimeCounter", $count);
 
 </script>
 

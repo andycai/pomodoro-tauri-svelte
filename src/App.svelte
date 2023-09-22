@@ -38,26 +38,13 @@
     }
   })
 
-  const getMainStyle = () => {
+  let mainStyle = ""
+  $: {
     const index = Math.floor($today / MagicNumber)
     const arr = TextColors[$workType]??TextColors[1]
     const color = arr[index]??arr[MagicNumber]
-    return ClassContainer + color 
+    mainStyle = ClassContainer + color 
   }
-
-  let mainStyle = getMainStyle()
-  const unsubscribe = today.subscribe((newValue) => {
-    mainStyle = getMainStyle()
-  })
-  const unsubscribe2 = workType.subscribe((newValue) => {
-    mainStyle = getMainStyle()
-  })
-
-  onDestroy(() => {
-    unsubscribe()
-    unsubscribe2()
-  })
-
 </script>
 
 <div class="{mainStyle}">
