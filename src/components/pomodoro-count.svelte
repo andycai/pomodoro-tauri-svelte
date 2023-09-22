@@ -13,13 +13,11 @@
 
 </script>
 
-<div class="flex flex-row flex-none ml-1">
-  <div on:click={change}>
+<div on:click={change}>
 {#if $workType === WorkType.Work}
-  <ClockOutline class="cursor-pointer" size="{15}" />
+  <ClockOutline class="cursor-pointer" />
 {:else}
-  <CoffeeOutline class="cursor-pointer" size="{15}" />
+  <CoffeeOutline class="cursor-pointer" />
 {/if}
-  </div>
-  <span class="text-xs ml-1 pt-0">{ $total }/{ $today }</span>
 </div>
+<span class="text-xs ml-1 pt-0">{ $total }/{ $today }</span>

@@ -27,8 +27,8 @@
 
 <div on:click={action.tick}>
 {#if $status === Status.Tick}
-	<PauseCircleOutline class="cursor-pointer" size="{IconSize}" />
+	<PauseCircleOutline class="cursor-pointer" />
 {:else}
-	<PlayCircleOutline class="cursor-pointer" size="{IconSize}" />
+	<PlayCircleOutline class="cursor-pointer" />
 {/if}
 </div>
