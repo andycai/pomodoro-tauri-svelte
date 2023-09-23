@@ -20,9 +20,9 @@
 
 <button title="Change Audio or Mute" on:click={change}>
 {#if musicOff }
-  <VolumeMute />
+  <VolumeMute class="w-4 h-4" />
 {:else}
-  <VolumeHigh />
+  <VolumeHigh class="w-4 h-4" />
 {/if}
 </button>
 <span class="text-xs pt-0">{ $total }/{ $today }</span>

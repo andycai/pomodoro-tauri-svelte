@@ -26,8 +26,8 @@
 
 <button class="flex flex-row justify-center basis-1/2" title="Play or Pause" on:click={action.tick}>
 {#if $status === Status.Tick}
-	<PauseCircleOutline />
+	<PauseCircleOutline class="w-6 h-6" />
 {:else}
-	<PlayCircleOutline />
+	<PlayCircleOutline class="w-6 h-6" />
 {/if}
 </button>

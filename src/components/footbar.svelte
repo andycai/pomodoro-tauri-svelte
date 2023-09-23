@@ -9,9 +9,9 @@
   }
 </script>
 
-<div class="flex flex-row items-end mt-1 px-1 text-2xl">
+<div class="flex flex-row items-end mt-1 px-1">
   <button class="flex flex-row justify-start text-sm basis-1/4" title="Change Theme" on:click={changeTheme}>
-    <Palette />
+    <Palette class="w-4 h-4" />
   </button>
   <OperationButton />
   <RefreshButton />

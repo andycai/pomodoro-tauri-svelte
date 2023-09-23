@@ -6,9 +6,9 @@
   //
 </script>
 
-<div class="flex flex-row justify-between pt-1 px-1 text-sm">
+<div class="flex flex-row justify-between pt-1 px-1">
   <PomodoroCount />
   <button title="Close Window" class="flex flex-row justify-end space-x-1" on:click={() => appWindow.close() }>
-    <Close />
+    <Close class="w-4 h-4" />
   </button>
 </div>

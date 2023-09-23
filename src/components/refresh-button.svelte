@@ -8,6 +8,6 @@
 
 <button class="flex flex-row justify-end text-sm basis-1/4" title="Reset" on:click={action.reset}>
 {#if $status === Status.Pause || $workType === WorkType.Break}
-  <RefreshCircle />
+  <RefreshCircle class="w-4 h-4" />
 {/if}
 </button>
