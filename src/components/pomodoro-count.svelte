@@ -1,9 +1,9 @@
 <script lang="ts">
-  import VolumeMute from "svelte-material-icons/VolumeMute.svelte";
-  import VolumeHigh from "svelte-material-icons/VolumeHigh.svelte";
   import { today, total, status } from "../store/store";
   import { changeAudio, playAudio } from "../utils";
   import { Status } from "../config";
+  import Volume from "../icons/volume.svelte";
+  import VolumeMute from "../icons/volume-mute.svelte";
 
   console.log("render today count")
 
@@ -20,9 +20,9 @@
 
 <button title="Change Audio or Mute" on:click={change}>
 {#if musicOff }
-  <VolumeMute class="w-4 h-4" />
+  <VolumeMute width={16} height={16} />
 {:else}
-  <VolumeHigh class="w-4 h-4" />
+  <Volume width={16} height={16} />
 {/if}
 </button>
 <span class="text-xs pt-0">{ $total }/{ $today }</span>
