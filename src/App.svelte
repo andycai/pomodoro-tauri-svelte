@@ -1,16 +1,16 @@
 <script lang="ts">
   import { action, workType, theme } from './store/store';
   import { onMount } from 'svelte';
-  import { DefaultWorkDuration, Keys, MagicNumber, Tasks, dataJsonURL, diAudioPaths, endAudioPaths } from './config';
-  import { getIntDefault, initItem } from './store/local';
-  import { resolveResource } from "@tauri-apps/api/path";
-  import { readTextFile } from "@tauri-apps/api/fs";
-  import { convertFileSrc } from "@tauri-apps/api/tauri";
-  import { addAudio, addEndAudio } from './utils';
-  import { ClassContainer, TextColors } from './style';
-  import Footbar from './components/footbar.svelte';
-  import TimeCounter from './components/time-counter.svelte';
-  import Appbar from './components/appbar.svelte';
+  import { DefaultWorkDuration, Keys, Tasks, dataJsonURL, diAudioPaths, endAudioPaths } from './config'
+  import { getIntDefault, initItem } from './store/local'
+  import { resolveResource } from "@tauri-apps/api/path"
+  import { readTextFile } from "@tauri-apps/api/fs"
+  import { convertFileSrc } from "@tauri-apps/api/tauri"
+  import { addAudio, addEndAudio } from './utils'
+  import { ClassContainer, TextColors } from './style'
+  import Footbar from './components/footbar.svelte'
+  import TimeCounter from './components/time-counter.svelte'
+  import Appbar from './components/appbar.svelte'
 
   onMount(async () => {
     action.initData(

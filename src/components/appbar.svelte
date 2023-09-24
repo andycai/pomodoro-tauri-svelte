@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { appWindow } from "@tauri-apps/api/window";
-  import PomodoroCount from "./pomodoro-count.svelte";
-  import Close from "../icons/close.svelte";
+  import { appWindow } from "@tauri-apps/api/window"
+  import PomodoroCount from "./pomodoro-count.svelte"
+  import Close from "../icons/close.svelte"
 
 </script>
 

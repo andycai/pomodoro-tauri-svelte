@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { Status, INTERVAL } from "../config";
-  import { action, status, timer } from "../store/store";
-  import { onDestroy } from "svelte";
-  import { playAudio, playEndAudio } from "../utils";
-  import Pause from "../icons/pause.svelte";
-  import Play from "../icons/play.svelte";
+  import { Status, INTERVAL } from "../config"
+  import { action, status, timer } from "../store/store"
+  import { onDestroy } from "svelte"
+  import { playAudio, playEndAudio } from "../utils"
+  import Pause from "../icons/pause.svelte"
+  import Play from "../icons/play.svelte"
 
 //   console.log("render Operaction")
 	const unsubscribe = status.subscribe((newValue) => {

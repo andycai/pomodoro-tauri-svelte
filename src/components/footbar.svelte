@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Palette from "../icons/palette.svelte";
-  import { action } from "../store/store";
-  import OperationButton from "./operation-button.svelte";
-  import RefreshButton from "./refresh-button.svelte";
+  import Palette from "../icons/palette.svelte"
+  import { action } from "../store/store"
+  import OperationButton from "./operation-button.svelte"
+  import RefreshButton from "./refresh-button.svelte"
 
   function changeTheme() {
     action.changeTheme()

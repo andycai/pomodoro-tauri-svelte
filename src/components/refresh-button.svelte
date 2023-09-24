@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Status, WorkType } from "../config";
-  import { action, status, workType } from "../store/store";
-  import Refresh from "../icons/refresh.svelte";"../icons/refresh.svelte";
+  import { Status, WorkType } from "../config"
+  import { action, status, workType } from "../store/store"
+  import Refresh from "../icons/refresh.svelte"
 
 </script>
 

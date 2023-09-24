@@ -1,11 +1,9 @@
 <script lang="ts">
-  import { today, total, status } from "../store/store";
-  import { changeAudio, playAudio } from "../utils";
-  import { Status } from "../config";
-  import Volume from "../icons/volume.svelte";
-  import VolumeMute from "../icons/volume-mute.svelte";
-
-  console.log("render today count")
+  import { today, total, status } from "../store/store"
+  import { changeAudio, playAudio } from "../utils"
+  import { Status } from "../config"
+  import Volume from "../icons/volume.svelte"
+  import VolumeMute from "../icons/volume-mute.svelte"
 
   let musicOff = false 
 

@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { count } from "../store/store";
-  import { convertMinuteString, convertSecondString } from "../utils";
-
-  // console.log("render TimeCounter", $count);
+  import { count } from "../store/store"
+  import { convertMinuteString, convertSecondString } from "../utils"
 
 </script>
 
