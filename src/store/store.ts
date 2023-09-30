@@ -19,6 +19,7 @@ export const action = {
     count.set(c)
     today.set(td)
     total.set(tt)
+    theme.set(Math.floor(td / MagicNumber))
   },
   updateDaykey: (tk: string) => {
     daykey.set(tk)
