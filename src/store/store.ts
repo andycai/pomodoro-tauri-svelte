@@ -21,12 +21,6 @@ export const action = {
     total.set(tt)
     theme.set(Math.floor(td / MagicNumber))
   },
-  updateDaykey: (tk: string) => {
-    daykey.set(tk)
-  },
-  updateToday: (c: number) => {
-    today.set(c)
-  },
   countdown: () => {
     if (get(count) === 0) {
       status.set(Status.Idle)
