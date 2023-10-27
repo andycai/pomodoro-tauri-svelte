@@ -65,5 +65,16 @@ export const action = {
   },
   changeTheme: () => {
     theme.update(t => (t + 1) % themeNum)
-  }
+  },
+  updateDuration: () => {
+    count.update((c) => {
+      if (get(status) == Status.Idle) {
+        if (get(workType) == WorkType.Break) {
+          return getIntDefault(Keys.defaultBreakDuration, DefaultBreakDuration)
+        }
+        return getIntDefault(Keys.defaultWorkDuration, DefaultWorkDuration)
+      }
+      return c
+    })
+  },
 }
